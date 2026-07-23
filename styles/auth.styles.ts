@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
     justifyContent: "center",
-        alignItems: "center",
+    alignItems: "center",
+    gap: 20,
   },
   title: {
     color: "red",
@@ -48,7 +49,8 @@ export const styles = StyleSheet.create({
   },
   brandSection: {
     alignItems: "center",
-    marginTop: height * 0.12,
+    // marginTop: height * 0.12,
+    gap: 0,
   },
   logoContainer: {
     width: 60,
@@ -65,7 +67,6 @@ export const styles = StyleSheet.create({
     fontFamily: "JetBrainsMono-Medium",
     color: COLORS.primary,
     letterSpacing: 0.5,
-    marginBottom: 8,
   },
   tagline: {
     fontSize: 16,
@@ -94,6 +95,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    gap: 0,
     backgroundColor: COLORS.white,
     paddingVertical: 16,
     paddingHorizontal: 24,
@@ -121,6 +123,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     color: COLORS.surface,
+    textAlign: "left",
   },
   termsText: {
     textAlign: "center",
