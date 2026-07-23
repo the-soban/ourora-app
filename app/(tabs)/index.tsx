@@ -5,7 +5,7 @@ import { styles } from "../../styles/auth.styles";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello world.</Text>
+      <Text style={styles.title}>Home feed screen</Text>
 
       {/* the difference between TouchableOpacity and Pressable is that Pressable provides more control over the press interactions, allowing you to customize the behavior based on the press state (e.g., pressed, hovered, focused). TouchableOpacity is a simpler component that only changes the opacity of the button when pressed. */}
 
