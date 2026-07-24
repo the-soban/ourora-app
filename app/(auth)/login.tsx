@@ -2,6 +2,7 @@ import { COLORS } from "@/constants/theme";
 import { styles } from "@/styles/auth.styles";
 import { useSSO } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
+import * as Linking from 'expo-linking';
 import { useRouter } from "expo-router";
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
@@ -10,13 +11,18 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 export default function login() {
     const {startSSOFlow} = useSSO();
     const router = useRouter();
-    const handleGoogleSignIn = async () => {
+        const handleGoogleSignIn = async () => {
         try {
-            const {createdSessionId, setActive} = await startSSOFlow({ strategy: "oauth_google" })
+            const {createdSessionId, setActive} = await startSSOFlow({ 
+                strategy: "oauth_google",
+                // Put redirectUrl here, inside startSSOFlow
+                redirectUrl: Linking.createURL('/(tabs)') 
+            })
 
             if(setActive && createdSessionId) {
-                setActive({ session: createdSessionId })
-                router.replace("/(tabs)")
+                setActive({ session: createdSessionId });
+                // Uncomment this to actually navigate after setting the session
+                router.replace("/(tabs)");
             }
         } catch (error) {
             console.error("OAuth error", error);
